@@ -203,7 +203,7 @@ void plotCI(FILE *of, int minX, int maxX, strandMeth *m, int which, char *col, i
     for(i=m->l-1; i>=0; i--) {
         if(meth[i]||umeth[i]) {
             val = CI(umeth[i], meth[i], 1);
-            fprintf(of, "  L %f %f\n", remapX(i+1, maxX, buffer,dim), remapY(val, minY, maxY, buffer, dim));
+            fprintf(of, "  L %f %f\n", remapX(plotCoord(i, maxX, endAligned), maxX, buffer,dim), remapY(val, minY, maxY, buffer, dim));
         }
     }
     fprintf(of, "Z\" fill=\"%s\" fill-opacity=\"0.2\"/>\n", col);
