@@ -382,7 +382,7 @@ void makeSVGs(char *opref, strandMeth **meths, int which, int endAligned) {
                 fprintf(of,"<line x1=\"%f\" y1=\"%i\" x2=\"%f\" y2=\"%i\" stroke=\"black\" />\n", \
                     remapX(xpos, maxX, buffer, dim), buffer+dim, remapX(xpos, maxX, buffer, dim), buffer+dim+5);
                 fprintf(of,"<text x=\"%f\" y=\"%i\" text-anchor=\"middle\">%i</text>\n", \
-                    remapX(xpos, maxX, buffer, dim), buffer+dim+20, xpos);
+                    remapX(xpos, maxX, buffer, dim), buffer+dim+20, xTicks[j]);
             }
             for(j=0; j<nYTicks; j++) {
                 fprintf(of,"<line x1=\"%i\" y1=\"%f\" x2=\"%i\" y2=\"%f\" stroke=\"black\" />\n", \
