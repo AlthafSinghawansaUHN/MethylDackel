@@ -456,11 +456,11 @@ void makeSVGs(char *opref, strandMeth **meths, int which, int endAligned) {
 }
 
 void makeTXT(strandMeth **m) {
-    char *abbrevs[4] = {"OT", "OB", "CTOT", "CTOB"};
+    char *abbrevs[8] = {"OT", "OB", "CTOT", "CTOB","OTend","OBend"};
     int i, j;
 
     printf("Strand\tRead\tPosition\tnMethylated\tnUnmethylated\n");
-    for(i=0; i<4; i++) {
+    for(i=0; i<8; i++) {
         if(m[i]->l) {
             for(j=0; j<m[i]->l; j++) {
                 if(m[i]->meth1[j] || m[i]->unmeth1[j])
