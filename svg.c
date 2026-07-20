@@ -456,7 +456,7 @@ void makeSVGs(char *opref, strandMeth **meths, int which, int endAligned) {
 }
 
 void makeTXT(strandMeth **m) {
-    char *abbrevs[8] = {"OT", "OB", "CTOT", "CTOB","OTend","OBend"};
+    char *abbrevs[8] = {"OT", "OB", "CTOT", "CTOB","OTend","OBend", "CTOTend", "CTOBend"};
     int i, j;
 
     printf("Strand\tRead\tPosition\tnMethylated\tnUnmethylated\n");
