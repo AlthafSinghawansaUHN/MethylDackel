@@ -455,12 +455,20 @@ void makeSVGs(char *opref, strandMeth **meths, int which, int endAligned) {
     free(oname);
 }
 
-void makeTXT(strandMeth **m) {
-    char *abbrevs[8] = {"OT", "OB", "CTOT", "CTOB","OTend","OBend", "CTOTend", "CTOBend"};
-    int i, j;
-
+void makeTXT(strandMeth **m, int endAligned) {
+		
+	int i, j, n;
+    if(!endAligned){
+		char *abbrevs[4] = {"OT", "OB", "CTOT", "CTOB"};
+		n = 4;
+	}
+	else{
+		char *abbrevs[8] = {"OT", "OB", "CTOT", "CTOB","OTend","OBend", "CTOTend", "CTOBend"};
+		n = 8;
+    }
+	
     printf("Strand\tRead\tPosition\tnMethylated\tnUnmethylated\n");
-    for(i=0; i<8; i++) {
+    for(i=0; i<n; i++) {
         if(m[i]->l) {
             for(j=0; j<m[i]->l; j++) {
                 if(m[i]->meth1[j] || m[i]->unmeth1[j])

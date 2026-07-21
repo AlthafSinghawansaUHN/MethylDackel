@@ -595,7 +595,8 @@ int mbias_main(int argc, char *argv[]) {
     //Report some output
     if(SVG) makeSVGs(opref, meths, config.keepCpG + 2*config.keepCHG + 4*config.keepCHH, 0);
     if(SVG && config.endAligned) makeSVGs(opref, meths+4, config.keepCpG + 2*config.keepCHG + 4*config.keepCHH, 1);
-    if(txt) makeTXT(meths);
+    if(txt) makeTXT(meths, 0);
+    if(txt && config.endAligned) makeTXT(meths, 1);
 
     //Close things up
     hts_close(config.fp);
